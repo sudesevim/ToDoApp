@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from "react-native";
 import GoalItem from "./components/GoalItem";
-import GoalInput from "./GoalInput";
+import GoalInput from "./components/GoalInput";
 
 interface Goal {
   id: string;
@@ -11,11 +11,10 @@ interface Goal {
 function App () {
   const [courseGoals, setCourseGoals] = useState<Goal[]>([]);
 
-  }
-  function addGoalHandler() {
+  function addGoalHandler(enteredGoalText: string) {
     setCourseGoals(currentGoals => [
       ...currentGoals,
-      { id: Math.random().toString(), text: enteredGoalText }
+      { text: enteredGoalText, id: Math.random().toString()}
     ]);
   }
 
