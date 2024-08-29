@@ -1,6 +1,7 @@
 import React, {useState} from "react";
-import {View, TextInput, Button} from 'react-native';
+import {View, TextInput} from 'react-native';
 import styles from './GoalInput.style';
+import Button from "../Button/Button";
 
 function GoalInput (props) {
     const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -19,7 +20,9 @@ function GoalInput (props) {
             <TextInput 
             style={styles.TextInput} 
             placeholder="Add goal..." 
-            onChangeText={goalInputHandler}/>
+            placeholderTextColor={'white'}
+            onChangeText={goalInputHandler}
+            value={enteredGoalText}/>
             <Button title="Add Goal" onPress={addGoalHandler}/>
       </View>
     );
